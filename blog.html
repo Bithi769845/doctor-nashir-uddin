@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recent Blog Posts</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #fff;
+        font-family: "Poppins", sans-serif;
+        color: #111;
+      }
+      .blog-section {
+        padding: 80px 0;
+      }
+      .blog-main img {
+        width: 100%;
+        height: 420px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      @media (max-width: 992px) {
+        .blog-main img {
+          height: 300px; /* ট্যাবলেট */
+        }
+      }
+
+      @media (max-width: 576px) {
+        .blog-main img {
+          height: 220px; /* মোবাইল */
+        }
+      }
+
+      .blog-meta {
+        font-size: 14px;
+        color: #777;
+      }
+      .blog-title {
+        font-weight: 600;
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: #111;
+        transition: 0.3s;
+      }
+      .blog-title:hover {
+        color: #007bff;
+      }
+      .blog-desc {
+        font-size: 15px;
+        color: #555;
+        margin-bottom: 10px;
+      }
+      .tag {
+        display: inline-block;
+        background: #f2f3f5;
+        border-radius: 30px;
+        padding: 4px 12px;
+        font-size: 13px;
+        margin-right: 5px;
+        color: #333;
+      }
+      .side-blog img {
+        width: 100%;
+        height: 130px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+      .side-blog .blog-title {
+        font-size: 16px;
+      }
+      @media (max-width: 991px) {
+        .side-blog img {
+          height: 100px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="blog-section">
+      <div class="container">
+        <h4 class="fw-semibold mb-4">Recent blog posts</h4>
+
+        <div class="row g-4">
+          <!-- Left Main Blog -->
+          <div class="col-lg-7">
+            <div class="blog-main">
+              <img
+                src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?w=800"
+                alt="Main Blog"
+              />
+              <p class="blog-meta mt-3 mb-1">Olivia Rhye • 20 Jan 2024</p>
+              <h5 class="blog-title">Conversations with London Makr & Co.</h5>
+              <p class="blog-desc">
+                We sat down with London’s fast-growing brand and product design
+                studio, Makr & Co. to find out how they’ve used Untitled UI to
+                2x their revenue.
+              </p>
+              <div>
+                <span class="tag">Design</span>
+                <span class="tag">Research</span>
+                <span class="tag">Interviews</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side Blogs -->
+          <div class="col-lg-5">
+            <div class="d-flex flex-column gap-4">
+              <!-- Blog 1 -->
+              <div class="d-flex side-blog gap-3">
+                <div class="flex-shrink-0">
+                  <img
+                    src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=400"
+                    alt="Blog 1"
+                  />
+                </div>
+                <div>
+                  <p class="blog-meta mb-1">Phoenix Baker • 19 Jan 2024</p>
+                  <h6 class="blog-title mb-2">
+                    A Relentless Pursuit of Perfection in Product Design
+                  </h6>
+                  <div>
+                    <span class="tag">Design</span>
+                    <span class="tag">Research</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Blog 2 -->
+              <div class="d-flex side-blog gap-3">
+                <div class="flex-shrink-0">
+                  <img
+                    src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=400"
+                    alt="Blog 2"
+                  />
+                </div>
+                <div>
+                  <p class="blog-meta mb-1">Lana Steiner • 18 Jan 2024</p>
+                  <h6 class="blog-title mb-2">
+                    How to Run a Successful Business With Your Partner
+                  </h6>
+                  <div>
+                    <span class="tag">Business</span>
+                    <span class="tag">Research</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Blog 3 -->
+              <div class="d-flex side-blog gap-3">
+                <div class="flex-shrink-0">
+                  <img
+                    src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=400"
+                    alt="Blog 3"
+                  />
+                </div>
+                <div>
+                  <p class="blog-meta mb-1">Lana Steiner • 18 Jan 2024</p>
+                  <h6 class="blog-title mb-2">
+                    Why Food Matters — Disease Prevention & Treatment
+                  </h6>
+                  <div>
+                    <span class="tag">Health</span>
+                    <span class="tag">Research</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

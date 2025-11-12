@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Section Dark</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #0f1b2b;
+      color: #bfc6d1;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .faq-section {
+      padding: 100px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .faq-container {
+      background-color: #14243a;
+      border-radius: 8px;
+      padding: 60px;
+      max-width: 1000px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .faq-left {
+      flex: 1 1 40%;
+      padding-right: 40px;
+    }
+
+    .faq-left h2 {
+      color: #e2e6ed;
+      font-weight: 700;
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+    }
+
+    .faq-left p {
+      color: #8f9aa8;
+      font-size: 0.95rem;
+    }
+
+    .faq-right {
+      flex: 1 1 55%;
+      background-color: #1a2d46;
+      border-radius: 8px;
+      padding: 30px;
+    }
+
+    .accordion-item {
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid #2a3c56;
+    }
+
+    .accordion-button {
+      background-color: transparent;
+      color: #bfc6d1;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 1rem 0;
+      box-shadow: none;
+    }
+
+    .accordion-button::after {
+      filter: invert(1);
+    }
+
+    .accordion-button:not(.collapsed) {
+      color: #f3d765;
+      background-color: transparent;
+      border: none;
+    }
+
+    .accordion-body {
+      color: #9da8b7;
+      font-size: 0.9rem;
+      padding-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .faq-container {
+        flex-direction: column;
+        padding: 40px 25px;
+      }
+
+      .faq-left {
+        padding-right: 0;
+        margin-bottom: 40px;
+      }
+
+      .faq-right {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="faq-section">
+    <div class="faq-container">
+      
+      <!-- Left Side -->
+      <div class="faq-left">
+        <h2>Frequently Asked<br>Question</h2>
+        <p>Trusted in more than 100 countries and 4 million customers.</p>
+      </div>
+
+      <!-- Right Side -->
+      <div class="faq-right">
+        <div class="accordion" id="faqAccordion">
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1" aria-expanded="true">
+                How do I update my billing information?
+              </button>
+            </h2>
+            <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec ante vitae purus tempus egestas. Curabitur euismod purus sed elit faucibus. Vivamus in ante sed libero feugiat fermentum.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
+                How do I update my billing information?
+              </button>
+            </h2>
+            <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Nulla facilisi. Integer vel magna sit amet lorem suscipit luctus a vitae elit.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">
+                How do I update my billing information?
+              </button>
+            </h2>
+            <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Donec commodo, massa non vestibulum egestas, purus lectus feugiat lacus.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4">
+                How do I update my billing information?
+              </button>
+            </h2>
+            <div id="q4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Suspendisse ac enim at quam ultricies pretium ac a lorem.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q5">
+                How do I update my billing information?
+              </button>
+            </h2>
+            <div id="q5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Curabitur in felis nec odio ultricies tincidunt sit amet id metus.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

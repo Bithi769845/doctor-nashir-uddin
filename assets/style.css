@@ -1,563 +1,1549 @@
+/* ================================================================= */
+/* 🎨 LIGHT THEME COLOR VARIABLES (Based on Laserina Logo) */
+/* ================================================================= */
 :root {
-    /* 🌑 Base Primary Theme */
-    --primary-color: #23283d;
-    /* Main brand color */
-    --primary-light: #2e3550;
-    /* Slightly lighter for hover/sections */
-    --primary-dark: #1a1e2d;
-    /* Darker version for headers/footer */
-    --accent-color: #5568aa;
-    /* Accent blue tone for highlights/buttons */
-    --accent-light: #7085c2;
-    /* Hover/soft backgrounds */
-    --accent-dark: #3d4f8a;
-    /* Button hover or active state */
-    --nav-accent-white: #f4f5fa;
-    /* Button hover or active state */
+  /* ⚪ Base Primary Theme (Light) */
+  --primary-white: #ffffff;
 
-    /* ⚪ Neutral Tones */
-    --background-color: #1c1f2e;
-    /* Main background (deep bluish) */
-    --section-alt-bg: #2a2f44;
-    /* Alternate section (about, blog, etc.) */
-    --card-bg: #2f3550;
-    /* Card backgrounds */
-    --border-color: rgba(255, 255, 255, 0.08);
+  /* 🔶 ACCENT COLORS (From Logo: Orange/Gold - Professional Highlight) */
+  --accent-color: #e59200; /* Deep Orange/Gold - Main CTA/Highlight */
+  --accent-light: #ffb74d; /* Lighter Orange - Hover/Subtle highlight */
+  --accent-dark: #cc7f00; /* Darker Orange - Button hover/Active */
 
-    /* ✍ Typography */
-    --text-color: #f4f5fa;
-    /* Main text (white with warmth) */
-    --text-muted: #b7bac7;
-    /* Subtext */
-    --text-subtle: #8c8fa1;
-    /* Subtext of subtext */
-    --heading-color: #ffffff;
-    /* Headings bright white */
+  /* 💖 Secondary Accent from Logo (Red/Pink - For specific highlights/Icons) */
+  --secondary-accent-red: #cc0033;
+  --secondary-accent-pink: #d94998;
 
-    /* 🌫 Transparency / Shadow */
-    --overlay-color: rgba(35, 40, 61, 0.85);
-    --shadow-color: rgba(0, 0, 0, 0.35);
+  /* 🔷 PRIMARY/STRUCTURAL COLORS (Professional & Trustworthy) */
+  --primary-color: #0b3d91; /* Deep Blue - Headers/Footers (Strong, Trustworthy) */
+  --primary-light: #f4f7fb; /* Very Light Blue/Gray - Alternate section BG */
+  --primary-dark: #072a6b; /* Darker Blue - Deepest contrast */
 
-    /* 🔘 Buttons */
-    --btn-bg: var(--accent-color);
-    --btn-hover-bg: var(--accent-dark);
-    --btn-text-color: #ffffff;
+  /* ⚪ Neutral Tones */
+  --background-color: #ffffff; /* Main clean white background */
+  --section-alt-bg: var(--primary-light); /* Alternate section background */
+  --card-bg: #ffffff; /* Card backgrounds */
+  --border-color: rgba(11, 61, 145, 0.1); /* Subtle blue border */
 
-    /* 🧭 Navbar */
-    --navbar-bg: rgba(26, 30, 45, 0.95);
-    --navbar-text: #f4f5fa;
-    --navbar-hover: var(--accent-light);
+  /* ✍ Typography */
+  --text-color: #495057; /* Dark Gray for main text (Easy to read) */
+  --text-muted: #6c757d; /* Lighter Gray for subtext */
+  --text-subtle: #adb5bd; /* Subtext of subtext */
+  --heading-color: var(--primary-color); /* Headings in Deep Blue */
 
-    /* ✨ Misc */
-    --border-radius: 12px;
-    --font-family: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    --font-size-base: 16px;
-    --line-height-base: 1.6;
+  /* 🌫 Transparency / Shadow */
+  --overlay-color: rgba(255, 255, 255, 0.95);
+  --shadow-color: rgba(0, 0, 0, 0.15); /* Light shadow */
+
+  /* 🔘 Buttons */
+  --btn-bg: var(--accent-color);
+  --btn-hover-bg: var(--accent-dark);
+  --btn-text-color: #ffffff;
+
+  /* 🧭 Navbar */
+  --navbar-bg: #ffffff; /* Clean white navbar */
+  --navbar-text: var(--primary-color);
+  --navbar-hover: var(--accent-color);
+
+  /* ✨ Misc */
+  --border-radius: 10px; /* Adjusted slightly for light theme */
+  --font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.6;
 }
-
-
 
 /* *{
     background-color: var(--background-color);
 } */
 
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: var(--font-family);
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
-/* 🔘 Navbar Styling */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  font-weight: 700;
+}
+
+/* ================================================================= */
+/* 🧭 NAVBAR STYLING */
+/* ================================================================= */
 .navbar {
-    background-color: var(--navbar-bg) !important;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
-    height: 65px;
-    /* font-size: 20px; */
+  background-color: var(--navbar-bg) !important;
+  /* Removed backdrop-filter: blur(8px); for light theme */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); /* Lighter shadow */
+  height: 65px;
+  /* font-size: 20px; */
 }
 
 .navbar-brand {
-    color: var(--text-color) !important;
-    font-weight: 600;
-    letter-spacing: 1px;
+  color: var(--navbar-text) !important;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .navbar-nav .nav-link {
-    color: var(--text-muted) !important;
-    font-weight: 500;
-    transition: 0.3s;
+  color: var(--text-color) !important; /* General text color */
+  font-weight: 500;
+  transition: 0.3s;
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-    color: var(--navbar-hover) !important;
+  color: var(--navbar-hover) !important; /* Orange accent */
 }
 
-/* 🔘 Button example (optional if you use one later) */
+/* 🔘 Button example */
 .btn-custom {
-    background-color: var(--accent-color);
-    color: #fff;
-    border: none;
-    transition: 0.3s;
-    text-decoration: none;
-    padding: 10px 20px;
+  background-color: var(--btn-bg);
+  color: var(--btn-text-color);
+  border: none;
+  transition: 0.3s;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 6px; /* Adjusted based on light theme convention */
 }
 
 .btn-custom:hover {
-    background-color: var(--accent-dark);
+  background-color: var(--btn-hover-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* navbar Dropdown opens on hover (for desktop only) */
 @media (min-width: 992px) {
-    .navbar .dropdown:hover .dropdown-menu {
-        display: block;
-        margin-top: 0;
-    }
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  .navbar .dropdown-menu {
+    background-color: var(--card-bg);
+  }
+  .navbar .dropdown-item {
+    color: var(--text-color);
+  }
+  .navbar .dropdown-item:hover {
+    background-color: var(--section-alt-bg);
+    color: var(--accent-color);
+  }
 
-    .navbar .dropdown-toggle::after {
-        transform: rotate(0deg);
-        transition: 0.2s;
-    }
+  .navbar .dropdown-toggle::after {
+    transform: rotate(0deg);
+    transition: 0.2s;
+  }
 
-    .navbar .dropdown:hover .dropdown-toggle::after {
-        transform: rotate(180deg);
-    }
+  .navbar .dropdown:hover .dropdown-toggle::after {
+    transform: rotate(180deg);
+  }
 }
 
 /* Navbar styling end */
 
-/* hero section start */
+/* ================================================================= */
+/* 🦸 HERO SECTION */
+/* ================================================================= */
 .hero {
-    height: 100vh;
-    /* background: linear-gradient(135deg, var(--primary-dark), var(--primary-color)); */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
+  height: 100vh;
+  /* background: linear-gradient(135deg, var(--primary-dark), var(--primary-color)); - Removed as per light theme */
+  background-color: var(--section-alt-bg); /* Light background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
 
 .hero-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-    filter: brightness(0.6);
-    /* darken video so text is readable */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: brightness(
+    0.85
+  ); /* Slightly darken video for readability on light theme */
 }
 
 .hero-card {
-    position: relative;
-    z-index: 2;
-    background-color: rgba(35, 40, 61, 0.7);
-    /* transparent card */
-    padding: 2rem;
-    border-radius: 12px;
-    max-width: 500px;
-    left: 350px;
-    color: #f4f5fa;
+  position: relative;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.9); /* Light transparent card */
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  max-width: 500px;
+  left: 350px;
+  color: var(--text-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 991px) {
-    .hero-card {
-        left: 0;
-        margin: 0 20px;
-    }
+  .hero-card {
+    left: 0;
+    margin: 0 20px;
+  }
 }
 
 .hero-card h2 {
-    margin-bottom: 0.8rem;
+  margin-bottom: 0.8rem;
+  color: var(--heading-color);
 }
 
 .hero-card p {
-    color: #b7bac7;
-    margin-bottom: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
 }
 
 /* hero section end */
 
-
-/* about section start */
+/* ================================================================= */
+/* 🏥 ABOUT SECTION */
+/* ================================================================= */
 .about-section {
-    position: relative;
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
-    padding: 80px 0;
-    overflow: hidden;
-    flex-wrap: wrap;
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 80px 0;
+  overflow: hidden;
+  flex-wrap: wrap;
+  background-color: var(--background-color);
 }
 
 /* Left text content */
 .about-text {
-    flex: 1;
-    z-index: 3;
+  flex: 1;
+  z-index: 3;
 }
 
 .about-text h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #0b3d91;
-    margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color); /* Deep Blue */
+  margin-bottom: 20px;
 }
 
 .about-text p {
-    font-size: 1.1rem;
-    color: #495057;
-    line-height: 1.7;
-    margin-bottom: 30px;
+  font-size: 1.1rem;
+  color: var(--text-color); /* Dark Gray text */
+  line-height: 1.7;
+  margin-bottom: 30px;
 }
 
-.btn-custom {
-    background-color: #0b3d91;
-    color: #fff;
-    border: none;
-    padding: 12px 30px;
-    font-weight: 500;
-    border-radius: 30px;
-    transition: 0.3s;
-}
-
+/* The .btn-custom style is already defined globally and applies here */
 .btn-custom:hover {
-    background-color: #082c6c;
-    transform: translateY(-3px);
+  background-color: var(--accent-dark);
+  transform: translateY(-3px);
 }
 
-/* Image background shape */
+/* Image background shape - Adjusted colors for light theme */
 .about-bg-shape {
-    position: absolute;
-    width: 550px;
-    height: 550px;
-    background: radial-gradient(circle at 30% 30%, #dee2e6, #adb5bd);
-    border-radius: 50% 30% 60% 40% / 40% 60% 30% 50%;
-    top: 50%;
-    right: 8%;
-    transform: translateY(-50%) rotate(25deg);
-    z-index: 0;
-    opacity: 0.5;
-    filter: blur(30px);
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    var(--primary-light),
+    #e9ecef
+  ); /* Light shades */
+  border-radius: 50% 30% 60% 40% / 40% 60% 30% 50%;
+  top: 50%;
+  right: 8%;
+  transform: translateY(-50%) rotate(25deg);
+  z-index: 0;
+  opacity: 0.8;
+  filter: blur(20px);
 }
 
 /* Glassy floating shape */
 .back-shape {
-    position: absolute;
-    width: 380px;
-    height: 380px;
-    background: rgba(255, 255, 255, 0.35);
-    backdrop-filter: blur(12px);
-    border-radius: 60% 40% 55% 45% / 55% 45% 60% 40%;
-    top: 50%;
-    right: 15%;
-    transform: translateY(-50%) rotate(15deg);
-    z-index: 1;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    animation: floatShape 6s ease-in-out infinite alternate;
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  background: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+  backdrop-filter: blur(12px);
+  border-radius: 60% 40% 55% 45% / 55% 45% 60% 40%;
+  top: 50%;
+  right: 15%;
+  transform: translateY(-50%) rotate(15deg);
+  z-index: 1;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  animation: floatShape 6s ease-in-out infinite alternate;
+  border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 @keyframes floatShape {
-    0% {
-        transform: translateY(-52%) rotate(15deg);
-    }
+  0% {
+    transform: translateY(-52%) rotate(15deg);
+  }
 
-    100% {
-        transform: translateY(-48%) rotate(18deg);
-    }
+  100% {
+    transform: translateY(-48%) rotate(18deg);
+  }
 }
 
 /* Image wrapper */
 .about-img-wrapper {
-    position: relative;
-    width: 450px;
-    height: 450px;
-    z-index: 2;
-    border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    margin: 0 auto;
+  position: relative;
+  width: 450px;
+  height: 450px;
+  z-index: 2;
+  border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
 }
 
 .about-img-wrapper::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.05);
-    border: 5px solid rgba(255, 255, 255, 0.4);
-    border-radius: inherit;
-    z-index: 2;
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Orange Border Highlight */
+  border: 5px solid var(--accent-color);
+  border-radius: inherit;
+  z-index: 2;
+  background: rgba(11, 61, 145, 0.05); /* Subtle blue overlay */
 }
 
 .about-img {
-    width: 100%;
-    height: 100%;
-    background-image: url('/assets/images/NasirUddin.jpg');
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.8s ease;
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/images/NasirUddin.jpg");
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.8s ease;
 }
 
 .about-img-wrapper:hover .about-img {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 @media (max-width: 991px) {
-    .about-section {
-        flex-direction: column;
-        text-align: center;
-    }
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
 
-    .about-img-wrapper {
-        margin-top: 40px;
-    }
+  .about-img-wrapper {
+    margin-top: 40px;
+  }
 
-    .back-shape {
-        position: absolute;
-        width: 380px;
-        height: 380px;
-        background: rgba(255, 255, 255, 0.35);
-        backdrop-filter: blur(12px);
-        border-radius: 60% 40% 55% 45% / 55% 45% 60% 40%;
-        top: 65%;
-        right: 30%;
-        transform: translateY(-50%) rotate(15deg);
-        z-index: 1;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-        animation: floatShape 6s ease-in-out infinite alternate;
-    }
+  .back-shape {
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    border-radius: 60% 40% 55% 45% / 55% 45% 60% 40%;
+    top: 65%;
+    right: 30%;
+    transform: translateY(-50%) rotate(15deg);
+    z-index: 1;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    animation: floatShape 6s ease-in-out infinite alternate;
+  }
 
-    .about-bg-shape {
-        position: absolute;
-        width: 550px;
-        height: 550px;
-        background: radial-gradient(circle at 30% 30%, #dee2e6, #adb5bd);
-        border-radius: 50% 30% 60% 40% / 40% 60% 30% 50%;
-        top: 65%;
-        right: 8%;
-        transform: translateY(-50%) rotate(25deg);
-        z-index: 0;
-        opacity: 0.5;
-        filter: blur(30px);
-    }
-
+  .about-bg-shape {
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(
+      circle at 30% 30%,
+      var(--primary-light),
+      #e9ecef
+    );
+    border-radius: 50% 30% 60% 40% / 40% 60% 30% 50%;
+    top: 65%;
+    right: 8%;
+    transform: translateY(-50%) rotate(25deg);
+    z-index: 0;
+    opacity: 0.8;
+    filter: blur(20px);
+  }
 }
 
 @media (max-width: 425px) {
+  .about-section {
+    flex-direction: column;
+    text-align: left;
+  }
 
-    .about-section {
-        flex-direction: column;
-        text-align: left;
-    }
+  .about-img-wrapper {
+    margin-top: 40px;
+  }
 
-    .about-img-wrapper {
-        margin-top: 40px;
-    }
+  .about-img {
+    width: 100%;
+    height: 100%;
+  }
 
-    .about-img {
-        width: 100%;
-        height: 100%;
+  .about-img-wrapper {
+    width: 300px;
+    height: 300px;
+  }
 
-    }
+  .back-shape {
+    width: 280px;
+    height: 280px;
+    top: 75%;
+    right: 20%;
+  }
 
-    .about-img-wrapper {
-        width: 300px;
-        height: 300px;
-
-    }
-
-    .back-shape {
-        width: 280px;
-        height: 280px;
-        top: 75%;
-        right: 20%;
-    }
-
-    .about-bg-shape {
-        width: 400px;
-        height: 400px;
-        top: 70%;
-        right: 5%;
-
-    }
+  .about-bg-shape {
+    width: 400px;
+    height: 400px;
+    top: 70%;
+    right: 5%;
+  }
 }
 
 /*about section end */
 
-/* service section start */
+/* ================================================================= */
+/* 📋 SERVICE SECTION */
+/* ================================================================= */
 .services-section {
-    background-color: var(--primary-color);
-    padding: 70px 0;
+  background-color: var(--section-alt-bg); /* Alternate Light BG */
+  padding: 70px 0;
 }
 
 .services-section h2 {
-    color: var(--heading-color);
+  color: var(--heading-color);
 }
 
 .service-box {
-    padding: 25px;
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-    height: 100%;
+  padding: 25px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+  height: 100%;
 }
 
 .service-box:hover {
-    /* background-color: var(--accent-dark); */
-    transform: translateY(-5px);
+  border-color: var(--accent-color);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .service-icon {
-    font-size: 2rem;
-    color: var(--accent-light);
-    margin-bottom: 15px;
+  font-size: 2rem;
+  color: var(--accent-color); /* Orange accent for icons */
+  margin-bottom: 15px;
 }
 
 .service-title {
-    font-weight: 600;
-    color: var(--heading-color);
-    margin-bottom: 10px;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 10px;
 }
 
 .divider {
-    width: 50px;
-    height: 2px;
-    background-color: var(--accent-color);
-    margin: 8px 0 16px;
+  width: 50px;
+  height: 2px;
+  background-color: var(--accent-color); /* Orange accent divider */
+  margin: 8px 0 16px;
 }
 
 .service-box p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
+  color: var(--text-color);
+  font-size: 0.95rem;
 }
 
 /* service section end */
 
-
-
-/* why choose me start*/
-/* SECTION */
+/* ================================================================= */
+/* ✅ WHY CHOOSE ME SECTION */
+/* ================================================================= */
 .whychoose-section {
-    /* background-color: var(--primary-color); */
-    background-color: #292d3f;
-    padding: 100px 0;
+  background-color: var(--background-color);
+  padding: 100px 0;
 }
 
 .whychoose-left small {
-    color: var(--text-subtle);
-    letter-spacing: 2px;
+  color: var(--accent-color); /* Orange accent */
+  letter-spacing: 2px;
 }
 
 .whychoose-left h2 {
-    color: var(--heading-color);
-    font-weight: 700;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+  color: var(--heading-color);
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
 .whychoose-left p {
-    color: var(--text-muted);
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 30px;
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
 }
 
 .btn-learn {
-    background-color: var(--accent-color);
-    color: #fff;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: 0.3s ease;
+  background-color: var(--btn-bg);
+  color: var(--btn-text-color);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: 0.3s ease;
 }
 
 .btn-learn:hover {
-    background-color: var(--accent-dark);
+  background-color: var(--btn-hover-bg);
 }
 
 /* CARD STYLING */
 .whychoose-card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    padding: 25px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-    transition: all 0.3s ease;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
 .whychoose-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
 
 .icon-box {
-    width: 55px;
-    height: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    margin-bottom: 15px;
-    color: #fff;
-    font-size: 1.4rem;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  color: #fff;
+  font-size: 1.4rem;
 }
 
+/* Icon Colors (Using logo accents and primary blue) */
 .icon-blue {
-    background-color: #4a6cf7;
+  background-color: var(--primary-color); /* Deep Blue */
 }
 
 .icon-green {
-    background-color: #48b474;
+  background-color: var(--secondary-accent-pink); /* Pink Accent */
 }
 
 .icon-pink {
-    background-color: #e14b77;
+  background-color: var(--secondary-accent-red); /* Red Accent */
 }
 
 .icon-purple {
-    background-color: #7d4de0;
+  background-color: var(--accent-color); /* Main Orange Accent */
 }
 
 .whychoose-card h5 {
-    color: var(--heading-color);
-    font-weight: 600;
-    margin-bottom: 10px;
+  color: var(--heading-color);
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
 .whychoose-card p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    margin: 0;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  margin: 0;
 }
 
 /* STAGGER EFFECT */
 .stagger-up .whychoose-card {
-    margin-top: -40px;
+  margin-top: -40px;
 }
 
 .stagger-down .whychoose-card {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
-
 @media (max-width: 991px) {
+  .stagger-up,
+  .stagger-down {
+    margin-top: 0;
+  }
 
-    .stagger-up,
-    .stagger-down {
-        margin-top: 0;
-    }
-
-    .whychoose-section {
-        padding: 60px 0;
-    }
+  .whychoose-section {
+    padding: 60px 0;
+  }
 }
 
 /* why choose me end*/
+
+/* ================================================================= */
+/* 🌟 HAPPY USERS SECTION */
+/* ================================================================= */
+.happy_users {
+  padding: 80px 0;
+  text-align: center;
+  background-color: var(--section-alt-bg); /* Alternate Light BG */
+}
+h2 {
+  color: var(--heading-color);
+}
+
+.midCircle-wrapper {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.midCircle {
+  width: 320px;
+  height: 320px;
+  position: relative;
+  background: var(--primary-color); /* Deep Blue Circle */
+  border-radius: 50%;
+  margin: 0 auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-text {
+  position: relative;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-light); /* Light Orange text on blue */
+}
+
+.circle-text span {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.mini-circle {
+  position: absolute;
+  background: var(--primary-white);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-color); /* Deep Blue text */
+  border: 2px solid var(--border-color);
+}
+
+.mini-circle span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Circle Positions */
+.mini-top {
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+}
+.mini-left {
+  left: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 110px;
+  height: 110px;
+}
+.mini-right {
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 110px;
+  height: 110px;
+}
+.mini-bottom {
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 90px;
+}
+
+/* Decorative dots - Using logo accents and primary blue */
+.dot {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.dot1 {
+  width: 25px;
+  height: 25px;
+  background: var(--accent-color); /* Orange */
+  bottom: 85%;
+  right: 90%;
+}
+.dot2 {
+  width: 20px;
+  height: 20px;
+  background: var(--secondary-accent-red); /* Red */
+  top: 8%;
+  left: 90%;
+}
+.dot3 {
+  width: 18px;
+  height: 18px;
+  background: var(--secondary-accent-pink); /* Pink */
+  left: 95%;
+  top: 90%;
+}
+.dot4 {
+  width: 35px;
+  height: 35px;
+  background: var(--primary-color); /* Deep Blue */
+  top: 90%;
+  right: 90%;
+}
+
+/* Responsive Media Queries for Happy Users remain the same */
+@media (max-width: 992px) {
+  .midCircle {
+    width: 260px;
+    height: 260px;
+  }
+  .mini-circle {
+    width: 90px;
+    height: 90px;
+    font-size: 1rem;
+  }
+  .circle-text {
+    font-size: 1.2rem;
+    padding: 12px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .midCircle {
+    width: 230px;
+    height: 230px;
+  }
+  .mini-circle {
+    width: 75px;
+    height: 75px;
+    font-size: 0.95rem;
+  }
+  .circle-text {
+    font-size: 1rem;
+    padding: 10px 25px;
+  }
+  .mini-top {
+    top: -40px;
+  }
+  .mini-left {
+    left: -40px;
+  }
+  .mini-right {
+    right: -40px;
+  }
+  .mini-bottom {
+    bottom: -40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .midCircle {
+    width: 200px;
+    height: 200px;
+  }
+  .mini-circle {
+    width: 65px;
+    height: 65px;
+    font-size: 0.85rem;
+  }
+  .circle-text {
+    font-size: 0.9rem;
+    padding: 8px 20px;
+  }
+  .circle-text span {
+    font-size: 0.7rem;
+  }
+  .mini-top {
+    top: -35px;
+  }
+  .mini-left {
+    left: -35px;
+  }
+  .mini-right {
+    right: -35px;
+  }
+  .mini-bottom {
+    bottom: -35px;
+  }
+}
+
+/* faq start */
+/* ================================================================= */
+/* ❓ FAQ SECTION STYLING (Light Theme) */
+/* ================================================================= */
+
+.faq-section {
+  padding: 100px 0;
+  background-color: var(--section-alt-bg); /* Use light alternate background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.faq-container {
+  /* Removed hardcoded dark background */
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  padding: 60px;
+  max-width: 1000px;
+  width: 100%;
+
+  /* --- Grid/Flexbox Layout --- */
+  display: flex; /* Using Flexbox for flexible two-column layout */
+  gap: 40px;
+  align-items: flex-start; /* Align items to the top */
+}
+
+.faq-left {
+  flex: 0 0 40%; /* Fixed width for left text */
+  padding-right: 0; /* Removed hardcoded padding right */
+}
+
+.faq-left h2 {
+  color: var(--heading-color); /* Deep Blue heading color */
+  font-weight: 700;
+  font-size: 2.5rem; /* Increased size slightly for emphasis */
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.faq-left p {
+  color: var(--text-color); /* Standard dark text for easy reading */
+  font-size: 1rem;
+}
+
+.faq-right {
+  flex: 1; /* Takes up the remaining space */
+  background-color: var(--card-bg); /* Clean white background */
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); /* Soft shadow */
+}
+
+.accordion-item {
+  background-color: transparent;
+  border: none;
+  /* Use subtle blue border for separation */
+  border-bottom: 1px solid var(--border-color);
+}
+
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+.accordion-button {
+  background-color: transparent;
+  color: var(--text-color); /* Dark text for question */
+  font-weight: 600; /* Slightly bolder for question */
+  font-size: 1rem;
+  padding: 1.2rem 0;
+  box-shadow: none;
+  transition: color 0.3s ease;
+}
+
+.accordion-button:focus {
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+/* Arrow color adjustment for light theme */
+.accordion-button::after {
+  /* Reset filter or use custom background image */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23495057'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+}
+
+/* Active State */
+.accordion-button:not(.collapsed) {
+  color: var(--accent-color); /* Orange accent for active question */
+  background-color: transparent;
+  border: none;
+}
+
+/* Active Arrow Color */
+.accordion-button:not(.collapsed)::after {
+  /* Set active arrow to Orange/Primary color */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e59200'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+  transform: rotate(-180deg);
+}
+
+.accordion-body {
+  color: var(--text-muted); /* Muted text color for answer */
+  font-size: 0.95rem;
+  line-height: var(--line-height-base);
+  padding-bottom: 1.2rem;
+}
+
+/* ================================================================= */
+/* 📱 MEDIA QUERIES */
+/* ================================================================= */
+@media (max-width: 992px) {
+  /* Tablet/Smaller Desktop */
+  .faq-container {
+    padding: 50px 30px;
+    flex-direction: column; /* Stack columns */
+    gap: 30px;
+  }
+
+  .faq-left {
+    flex: auto;
+    padding-right: 0;
+    margin-bottom: 0;
+    text-align: center; /* Center text when stacked */
+  }
+
+  .faq-left h2 {
+    font-size: 2rem;
+  }
+
+  .faq-right {
+    flex: auto;
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Mobile */
+  .faq-section {
+    padding: 60px 0;
+  }
+
+  .faq-container {
+    padding: 30px 15px;
+  }
+
+  .faq-left h2 {
+    font-size: 1.8rem;
+  }
+
+  .accordion-button {
+    font-size: 0.95rem;
+  }
+
+  .accordion-body {
+    font-size: 0.9rem;
+  }
+}
+
+/* faq end */
+/* ================================================================= */
+/* 🌟 TESTIMONIAL SECTION STYLING (Light Theme) */
+/* ================================================================= */
+
+.testimonial-section {
+  padding: 80px 0;
+  /* Light Blue/Gray Background for Contrast */
+  background-color: var(--section-alt-bg);
+}
+
+/* Heading Styling for Testimonial Section */
+.testimonial-section h2 {
+  color: var(--heading-color); /* Deep Blue */
+}
+.testimonial-section p.text-muted {
+  color: var(--text-color) !important; /* Standard dark text */
+}
+
+.testimonial-card {
+  background: var(--card-bg); /* Clean White Card BG */
+  border-radius: var(--border-radius); /* Inherit border radius */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Soft, clean shadow */
+  padding: 40px 60px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  max-width: 900px; /* Added max-width for better control */
+}
+
+.testimonial-img {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.testimonial-img img {
+  border-radius: 10px;
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+  /* Subtle light border to lift the image */
+  border: 4px solid var(--primary-white);
+}
+
+/* Image Accent Shadow (Behind the image) */
+.testimonial-img::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: -15px;
+  width: 100%;
+  height: 100%;
+  background: var(--accent-color); /* Orange Accent from Logo */
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.testimonial-content .quote {
+  color: var(--primary-color); /* Deep Blue for Quote Icon */
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.testimonial-content p {
+  font-size: 16px;
+  color: var(--text-color); /* Standard dark text */
+  margin-bottom: 20px;
+}
+
+.stars i {
+  color: var(--accent-color); /* Orange Accent for Stars */
+}
+
+.client-name {
+  font-weight: 700;
+  color: var(--heading-color); /* Deep Blue for Name */
+  font-size: 1.15rem;
+}
+
+.client-role {
+  font-size: 14px;
+  color: var(--text-muted); /* Muted text for Role */
+}
+
+/* Carousel controls / Arrow Buttons */
+.arrow-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  /* Orange Accent Border */
+  border: 2px solid var(--accent-color);
+  background: var(--primary-white);
+  color: var(--accent-color); /* Orange Accent Icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.arrow-btn:hover {
+  background: var(--accent-color); /* Solid Orange on Hover */
+  color: var(--primary-white);
+  box-shadow: 0 3px 8px rgba(229, 146, 0, 0.4);
+}
+
+/* ================================================================= */
+/* 📱 MEDIA QUERIES */
+/* ================================================================= */
+@media (max-width: 768px) {
+  .testimonial-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+  .testimonial-img::before {
+    left: 50%; /* Center the shadow on mobile */
+    transform: translateX(-50%);
+  }
+  .testimonial-content {
+    text-align: center !important; /* Center text content too */
+  }
+  .testimonial-content .quote {
+    text-align: center;
+  }
+}
+
+/* testimonial section end */
+/* ================================================================= */
+/* 📰 BLOG SECTION STYLING (Light Theme) */
+/* ================================================================= */
+
+.blog-section {
+  padding: 80px 0;
+  /* Ensure a clean background, using main white */
+  background-color: var(--background-color); 
+}
+
+/* Section Header Styling */
+.blog-section .container > h4 {
+    color: var(--heading-color); /* Deep Blue Header */
+    font-weight: 700;
+}
+
+.blog-main img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  /* Optional: Subtle border for a cleaner look */
+  border: 1px solid var(--border-color); 
+}
+
+@media (max-width: 992px) {
+  .blog-main img {
+    height: 300px; /* ট্যাবলেট */
+  }
+}
+
+@media (max-width: 576px) {
+  .blog-main img {
+    height: 220px; /* মোবাইল */
+  }
+}
+
+.blog-meta {
+  font-size: 14px;
+  color: var(--text-muted); /* Muted text for meta info */
+  font-weight: 500;
+}
+
+.blog-title {
+  font-weight: 700; /* Bolder font for prominence */
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: var(--heading-color); /* Deep Blue/Primary Color */
+  transition: 0.3s;
+  text-decoration: none; /* Ensure it looks like a link on hover */
+}
+
+.blog-title:hover {
+  color: var(--accent-color); /* Orange Accent on Hover */
+}
+
+.blog-desc {
+  font-size: 15px;
+  color: var(--text-color); /* Standard dark text */
+  margin-bottom: 10px;
+}
+
+.tag {
+  display: inline-block;
+  background: var(--section-alt-bg); /* Very light blue/gray background for tags */
+  border-radius: 30px;
+  padding: 4px 12px;
+  font-size: 13px;
+  margin-right: 5px;
+  color: var(--primary-color); /* Deep Blue text for tags */
+  font-weight: 500;
+  border: 1px solid rgba(11, 61, 145, 0.1);
+  transition: background 0.3s ease;
+}
+
+.tag:hover {
+    background: var(--accent-light); /* Lighter Orange on hover */
+    color: var(--primary-dark);
+}
+
+.side-blog img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  /* Optional: Subtle border */
+  border: 1px solid var(--border-color); 
+}
+
+.side-blog .blog-title {
+  font-size: 18px; /* Slightly larger size for side blog titles */
+}
+
+@media (max-width: 991px) {
+  .side-blog img {
+    height: 100px;
+  }
+}
+
+/* blog section end */
+
+/* ================================================================= */
+/* 🦶 FOOTER SECTION STYLING (Light Theme - Deep Blue) */
+/* ================================================================= */
+
+.footer-section {
+  padding: 60px 0 20px;
+  /* Deep Blue Background - Strong, trustworthy contrast */
+  background-color: var(--primary-color);
+  color: var(--nav-accent-white); /* Light text on dark background */
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Light separation line */
+}
+
+.footer-col {
+  flex: 1 1 200px; /* Min width for columns */
+}
+
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent-light); /* Light Orange/Gold Logo color */
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.footer-col p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 8px;
+}
+
+.footer-col h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary-white); /* Bright white header */
+  margin-bottom: 20px;
+}
+
+/* Links List Styling */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: var(--accent-light); /* Light Orange hover effect */
+}
+
+/* Contact Info Styling */
+.footer-col.contact p i {
+    color: var(--accent-color); /* Orange accent icon */
+    margin-right: 10px;
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 15px;
+}
+.social-links a {
+    color: var(--primary-white);
+    font-size: 1.2rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+.social-links a:hover {
+    color: var(--accent-color); /* Orange hover */
+}
+
+/* Footer Bottom Bar */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  font-size: 0.9rem;
+}
+
+.copyright-mobile {
+    display: none; /* Hide copyright on desktop */
+}
+
+.footer-links-bottom a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.footer-links-bottom a:hover {
+    color: var(--accent-light);
+}
+
+/* ================================================================= */
+/* 📱 MEDIA QUERIES */
+/* ================================================================= */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-col {
+    flex: 1 1 100%; /* Stack all columns */
+    margin-bottom: 20px;
+  }
+  
+  .footer-col h4 {
+      margin-bottom: 10px;
+  }
+  
+  .footer-col ul {
+      margin-bottom: 15px;
+  }
+
+  .footer-col ul li {
+      margin-bottom: 5px;
+  }
+
+  .footer-logo {
+      margin-bottom: 5px;
+  }
+  
+  .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+      padding-top: 10px;
+  }
+  
+  .copyright-desktop {
+      display: none; /* Hide desktop copyright */
+      /* color: var(--primary-white); */
+  }
+
+  .copyright-mobile {
+      display: block; /* Show mobile copyright */
+      margin-bottom: 10px;
+  }
+
+  .footer-links-bottom a {
+      margin: 0 10px;
+      display: block;
+  }
+}
+
+/* footer section end */
+
+/* gallery section start */
+
+/* ================================================================= */
+/* 🖼️ GALLERY SECTION STYLING (Light Theme - No Overlay) */
+/* ================================================================= */
+
+.gallery-section {
+    padding: 80px 0;
+    background-color: var(--background-color); /* Clean White BG */
+}
+
+/* Ensure headings use theme colors */
+.gallery-section h2 {
+    color: var(--heading-color); /* Deep Blue */
+}
+.gallery-section p.text-muted {
+    color: var(--text-color) !important;
+}
+
+.gallery-grid {
+    display: grid;
+    /* 3 Column Layout for Desktop */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px;
+}
+
+.gallery-item {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Soft shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    /* Orange Accent Border on hover to indicate clickability */
+    border: 3px solid transparent; 
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px); /* Lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent-light); /* Orange border on hover */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px; /* Fixed height for uniform look */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.03); /* Subtle zoom effect on hover */
+}
+
+/* Overlay এবং Zoom-in আইকনগুলো সম্পূর্ণ বাদ দেওয়া হলো */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .gallery-grid {
+        /* 2 Column Layout for Tablet */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    }
+    .gallery-item img {
+        height: 250px;
+    }
+}
+@media (max-width: 576px) {
+    .gallery-grid {
+        /* 1 Column Layout for Mobile */
+        grid-template-columns: 1fr; 
+    }
+    .gallery-item img {
+        height: 220px;
+    }
+}
+
+/* ================================================================= */
+/* 🔳 MODAL/LIGHTBOX STYLING */
+/* ================================================================= */
+
+.modal-backdrop.fade {
+  /* Gaarho/Dark background for lightbox effect */
+  background-color: rgba(0, 0, 0, 0.9); 
+}
+
+.custom-gallery-modal {
+  background-color: transparent; /* Remove white background */
+  border: none;
+}
+
+.custom-gallery-modal .modal-content {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.custom-gallery-modal .modal-body {
+    padding: 0;
+    text-align: center;
+}
+
+.modal-image-content {
+    /* Ensure image fits within the modal screen */
+    max-height: 90vh; 
+    width: auto;
+    object-fit: contain;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Close button style (Optional - if you add a close button) */
+.modal-header .btn-close {
+    filter: invert(1); /* White close button on dark background */
+    opacity: 0.8;
+}
+
+
+/* video section start */
+/* ================================================================= */
+/* 🎥 VIDEO GALLERY SECTION STYLING (Direct Embed) */
+/* ================================================================= */
+
+.video-gallery-section {
+    padding: 80px 0;
+    /* Use alternate light BG for contrast */
+    background-color: var(--section-alt-bg); 
+}
+
+/* Heading Styling */
+.video-gallery-section h2 {
+    color: var(--heading-color);
+}
+.video-gallery-section p.text-muted {
+    color: var(--text-color) !important;
+}
+
+.video-grid-embed {
+    display: grid;
+    /* 2 Column Layout for Desktop */
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+    gap: 30px;
+}
+
+.video-embed-item {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.video-embed-item:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border: 3px solid var(--accent-light); /* Light Orange border on hover */
+}
+
+/* 16:9 Aspect Ratio Container (Reused from previous Modal CSS) */
+.embed-responsive {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    /* Remove the 3px border from total width/height calculation */
+    box-sizing: border-box; 
+}
+
+.embed-responsive::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%; /* 16:9 aspect ratio (9 / 16 * 100) */
+}
+
+.embed-responsive-item {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .video-grid-embed {
+        /* 1 Column Layout for Tablet/Smaller Desktop */
+        grid-template-columns: 1fr; 
+    }
+}
